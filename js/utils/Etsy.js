@@ -62,6 +62,12 @@ Etsy.Sort = Sort.Created;
 Etsy.Order = Order.Up;
 
 /**
+ * The result id to find
+ * @type {String}
+ */
+Etsy.Id = 0;
+
+/**
  * Creates the url to request the API
  * @return {String}
  */
@@ -85,7 +91,9 @@ Etsy.GetQueryUrl = function (){
 	if(typeof Etsy.Order == 'string'){
 		url += '&sort_order='+Etsy.Order;
 	}
-	console.log(url);
+	if(typeof Etsy.Id > 0){
+		url += '&listing_id='+Etsy.Id;
+	}
 	return url;
 };
 
@@ -103,5 +111,17 @@ Etsy.Request = function (keywords){
 		url: Etsy.GetQueryUrl(),
 		dataType: 'jsonp',
 		success: View.ShowResults
+	});
+};
+
+/**
+ * Performs a request to the API and find product by Id
+ * @param {Number} Id to Search
+ */
+Etsy.RequestById = function (){
+	$.ajax({
+		url: Etsy.GetQueryUrl(),
+		dataType: 'jsonp',
+		success: View.ShowProduct
 	});
 };

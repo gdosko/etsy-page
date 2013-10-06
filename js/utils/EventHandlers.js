@@ -98,13 +98,10 @@ EventHandlers.DeleteOptions = function (event){
 /**
  * View more information about the product 
  */
-EventHandlers.ShowProduct = function (){
-	var html = '';
-	$('#show_product').dialog({
-		modal: true,
-		width: 700,
-		height: 600
-	});
+EventHandlers.ShowProduct = function (event){	
+	var temp_id = event.currentTarget.parentNode.parentNode.id;
+	Etsy.Id = temp_id.substring(5);
+	Etsy.RequestById(Etsy.Keywords);
 };
 
 /**

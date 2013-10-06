@@ -10,6 +10,7 @@ var View = {};
  */
 View.ShowResults = function (data){
 	if (data.ok) {
+		console.dir(data);
 		$('#results').empty();
 		var itemHtml = "";
 		for (var i = 0; i < data.results.length; i++) {
@@ -21,4 +22,21 @@ View.ShowResults = function (data){
 	} else {
 		console.log(data.error);
 	}
+};
+
+/**
+ * Show one product 
+ * @param {Object} data The json object from API response
+ */
+View.ShowProduct = function (data){
+	if (data.ok) {
+		$('#show_product').empty();
+		var itemHtml = Components.ItemIndividual(data);
+		$('#show_product').html(itemHtml);
+		$('#show_product').dialog({
+			modal: true,
+			width: 700,
+			minHeight: 300		
+		});
+	}	
 };
