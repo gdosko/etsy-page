@@ -9,14 +9,48 @@
 		<link rel="stylesheet" href="css/style.css" />
 		<script type="text/javascript" src="js/libs/jquery-1.10.2.min.js"></script>
 		<script type="text/javascript" src="js/libs/jquery-ui-1.10.3.custom.min.js"></script>
+		<script type="text/javascript" src="js/libs/bPopup.js"></script>
+		<script type="text/javascript" src="js/enums/Sort.js"></script>
+		<script type="text/javascript" src="js/enums/Order.js"></script>
+		<script type="text/javascript" src="js/utils/Components.js"></script>
+		<script type="text/javascript" src="js/utils/View.js"></script>
+		<script type="text/javascript" src="js/utils/EventHandlers.js"></script>
+		<script type="text/javascript" src="js/utils/Etsy.js"></script>
 		<script type="text/javascript" src="js/app.js"></script>
 	</head>
 	<body>
+		<div id="show_product">
+			<div id="show_product_images">
+				<img class="image" src="img/image_test.jpg" />
+				<img class="image" src="img/image_test.jpg" />
+				<img class="image" src="img/image_test.jpg" />
+			</div>
+			<span id="show_product_title">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</span>
+			<span id="show_product_description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</span>
+			<span id="show_product_rank">Rank #197</span>
+			<span id="show_product_views">Views: 254</span>
+			<span id="show_product_price">$ 220</span>
+			<div class="clearfix"></div>
+		</div>
 		<div class="wrapper">
 			<div id="search">				
+				<input type="text" id="search-text" name="search-text" />
+				<button id="search_button">Search</button>
+				<div id="sort_content">
+					<span id="sort_title">Sort By</span>
+					<select id="sort_by">
+						<option value="latest">Latest</option>
+						<option value="relevance">Relevance</option>
+						<option value="more_expensive">More Expensive</option>
+						<option value="cheaper">Cheaper</option>
+					</select>
+				</div>
+				<div class="clearfix"></div>
 			</div>
+			<div id="pagination"><a id="preview_page" href="#">Preview Page</a><span> - </span><a id="next_page" href="#">Next Page</a></div>
 			<div id="results">										
 			</div>
+			<div class="clearfix"></div>
 		</div>
 	</body>
 </html>
