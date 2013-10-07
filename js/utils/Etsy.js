@@ -8,6 +8,15 @@
 var Etsy = {};
 
 /**
+ * Initialize the app
+ * @return {String}
+ */
+Etsy.Init = function (){
+ Etsy.Request();
+ EventHandlers.StartListening();
+};
+
+/**
  * API base URL
  * @type {String}
  */
@@ -62,7 +71,7 @@ Etsy.Sort = Sort.Created;
 Etsy.Order = Order.Up;
 
 /**
- * The result id to find
+ * The product id to find
  * @type {String}
  */
 Etsy.Id = 0;

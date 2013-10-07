@@ -25,7 +25,7 @@ View.ShowResults = function (data){
 };
 
 /**
- * Show one product 
+ * Show a product 
  * @param {Object} data The json object from API response
  */
 View.ShowProduct = function (data){

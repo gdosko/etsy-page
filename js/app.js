@@ -1,6 +1,5 @@
 var init = function (){
-	Etsy.Request();
-	EventHandlers.StartListening();
+	Etsy.Init();
 };
 
 $(document).ready(init);

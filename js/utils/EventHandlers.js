@@ -9,13 +9,13 @@ var EventHandlers = {};
  */
 EventHandlers.StartListening = function (){
 	$('#search').click(EventHandlers.Search);
-	$('#preview_page').click(EventHandlers.Preview);
-	$('#next_page').click(EventHandlers.Next);
+	$('.prev').click(EventHandlers.Preview);
+	$('.next').click(EventHandlers.Next);
 	$('#sort_by').click(EventHandlers.Sort);
 };
 
 /**
- * Setup all event listeners
+ * Setup all result event listeners
  */
 EventHandlers.StartListeningResults = function (){
 	$('.product').mouseenter(EventHandlers.ShowOptions);
